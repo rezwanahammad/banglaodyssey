@@ -1,11 +1,15 @@
 import { NextRequest, NextResponse } from "next/server";
 import { connectToDatabase } from "../../../../../lib/mongodb";
 
+interface Params {
+  slug: string;
+}
+
 export async function GET(
   request: NextRequest,
-  { params }: { params: { slug: string } }
+  context: { params: Params }
 ) {
-  const { slug } = params;
+  const { slug } = context.params;
 
   const { db } = await connectToDatabase();
   const district = await db.collection("districts").findOne({ slug });
