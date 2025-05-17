@@ -5,8 +5,10 @@ export async function GET(
   request: NextRequest,
   { params }: { params: { slug: string } }
 ) {
+  const { slug } = params;
+
   const { db } = await connectToDatabase();
-  const district = await db.collection("districts").findOne({ slug: params.slug });
+  const district = await db.collection("districts").findOne({ slug });
 
   if (!district) {
     return NextResponse.json({ message: "District not found" }, { status: 404 });
