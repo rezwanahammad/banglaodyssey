@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
+
 import { connectToDatabase } from "../../../../../lib/mongodb";
 
 export async function GET(
-  request: Request,
+  request: NextRequest,
   context: { params: { slug: string } }
 ) {
   const { slug } = context.params;
