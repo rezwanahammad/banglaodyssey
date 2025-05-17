@@ -40,7 +40,7 @@ const Mainfeed = () => {
         <h1 className="text-4xl sm:text-5xl md:text-5xl font-bold drop-shadow-md text-green-800">
           Explore Bangladesh
         </h1>
-        <p className="text-base sm:text-lg md:text-xl mt-3 drop-shadow-sm">
+        <p className="text-base sm:text-lg md:text-xl mt-3 drop-shadow-sm text-red-600">
           Explore the beauty and diversity of Bangladesh through us.
         </p>
       </div>
